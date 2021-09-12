@@ -1,25 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_500"
-    android:orientation="vertical"
     tools:context="com.example.android.nerdynews.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:id="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nerdy News"
+                android:textColor="@color/red"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/main_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_below="@id/toolbar"
+        app:tabIndicatorColor="#D8F1060E"
+        app:tabIndicatorHeight="3.5dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#D8F1060E"
+        app:tabTextColor="#8E8C8C">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/home_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/covid_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Covid" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/politics_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Politics" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/health_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/science_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Science" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/entertainment_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entertainment" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/technology_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Technology" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/sports_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sports" />
+
+    </com.google.android.material.tabs.TabLayout>
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_tabs" />
 
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/sliding_tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Base.CardView"
-        app:tabMode="fixed" />
 
-</LinearLayout>
+
+</RelativeLayout>
