@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="0dp"
-        android:background="@color/white"
+        android:background="@color/red"
         android:id="@+id/toolbar">
 
         <RelativeLayout
@@ -21,10 +21,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nerdy News"
-                android:textColor="@color/red"
+                android:layout_centerInParent="true"
+                android:text="🄽🄴🅁🄳🅈 ＮＥＷＳ"
+                android:textColor="@color/white"
                 android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -34,13 +35,13 @@
         android:id="@+id/main_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/red"
         android:layout_below="@id/toolbar"
-        app:tabIndicatorColor="#D8F1060E"
+        app:tabIndicatorColor="@color/white"
         app:tabIndicatorHeight="3.5dp"
         app:tabMode="scrollable"
-        app:tabSelectedTextColor="#D8F1060E"
-        app:tabTextColor="#8E8C8C">
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/white">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/home_tab"
@@ -97,9 +98,14 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black"
         android:layout_below="@id/main_tabs" />
 
 
-
+<!--    <ProgressBar-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:id="@+id/loading_bar"/>-->
 
 </RelativeLayout>

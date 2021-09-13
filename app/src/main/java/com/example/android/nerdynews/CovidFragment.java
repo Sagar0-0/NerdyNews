@@ -1,10 +1,13 @@
 package com.example.android.nerdynews;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +23,7 @@ import retrofit2.Response;
 
 public class CovidFragment extends Fragment {
 
-    String NEWS_API_URL="https://newsapi.org/v2/top-headlines?q=covid&apiKey=cdbba53bb0d34fa2a43789edbdf5feba";
+    String NEWS_API_URL="https://newsapi.org/v2/top-headlines?country=in&q=covid&apiKey=cdbba53bb0d34fa2a43789edbdf5feba";
     final String apikey="cdbba53bb0d34fa2a43789edbdf5feba";
     private NewsAdapter mAdapter;
     private ArrayList<Articles> arrayList;
@@ -37,6 +40,7 @@ public class CovidFragment extends Fragment {
         mAdapter=new NewsAdapter(arrayList,getActivity());
         list.setAdapter(mAdapter);
 
+
         findNews();
 
         return rootView;
@@ -44,9 +48,12 @@ public class CovidFragment extends Fragment {
 
     private void findNews() {
         NewsUtils.getApiInterface().getSearchNews("in","covid",apikey).enqueue(new Callback<NewsModal>() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
+
                 if(response.isSuccessful()){
+                    assert response.body() != null;
                     arrayList.addAll(response.body().getArticles());
                     mAdapter.notifyDataSetChanged();
                 }

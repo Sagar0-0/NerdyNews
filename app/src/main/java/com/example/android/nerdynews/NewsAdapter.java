@@ -37,7 +37,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         Articles article=articles.get(position);
         holder.subTitle.setText(article.getDescription());
         holder.title.setText(article.getTitle());
-        Picasso.get().load(article.getUrlToImage()).into(holder.img);
+        if(article.getUrlToImage()==null){
+            holder.img.setImageResource(R.drawable.noimageavilable);
+        }else{
+            Picasso.get().load(article.getUrlToImage()).into(holder.img);
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.NerdyNews" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/grey</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>

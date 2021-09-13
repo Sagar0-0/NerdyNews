@@ -1,10 +1,15 @@
 package com.example.android.nerdynews;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +29,7 @@ public class HomeFragment extends Fragment {
     private NewsAdapter mAdapter;
     private ArrayList<Articles> arrayList;
     private RecyclerView list;
+    private ProgressBar loadingBar;
 
     @Nullable
     @Override
@@ -36,17 +42,21 @@ public class HomeFragment extends Fragment {
         mAdapter=new NewsAdapter(arrayList,getActivity());
         list.setAdapter(mAdapter);
 
-
         findNews();
+
+
+
 
         return rootView;
     }
 
     private void findNews() {
         NewsUtils.getApiInterface().getNews("in",100,apikey).enqueue(new Callback<NewsModal>() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
                 if(response.isSuccessful()){
+                    assert response.body() != null;
                     arrayList.addAll(response.body().getArticles());
                     mAdapter.notifyDataSetChanged();
                 }
@@ -54,7 +64,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<NewsModal> call, Throwable t) {
-
+                Toast.makeText(getContext(), "NO DATA FOUND :(", Toast.LENGTH_SHORT).show();
             }
         });
     }

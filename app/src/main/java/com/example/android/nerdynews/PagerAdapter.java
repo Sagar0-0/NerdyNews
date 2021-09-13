@@ -53,21 +53,21 @@ public class PagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position){
             case 0:
-                return "HOME";
+                return "\uD835\uDC07\uD835\uDC0E\uD835\uDC0C\uD835\uDC04";
             case 1:
-                return "COVID";
+                return "\uD835\uDC02\uD835\uDC0E\uD835\uDC15\uD835\uDC08\uD835\uDC03";
             case 2:
-                return "POLITICS";
+                return "\uD835\uDC0F\uD835\uDC0E\uD835\uDC0B\uD835\uDC08\uD835\uDC13\uD835\uDC08\uD835\uDC02\uD835\uDC12";
             case 3:
-                return "HEALTH";
+                return "\uD835\uDC07\uD835\uDC04\uD835\uDC00\uD835\uDC0B\uD835\uDC13\uD835\uDC07";
             case 4:
-                return "SCIENCE";
+                return "\uD835\uDC12\uD835\uDC02\uD835\uDC08\uD835\uDC04\uD835\uDC0D\uD835\uDC02\uD835\uDC04";
             case 5:
-                return "ENTERTAINMENT";
+                return "\uD835\uDC04\uD835\uDC0D\uD835\uDC13\uD835\uDC04\uD835\uDC11\uD835\uDC13\uD835\uDC00\uD835\uDC08\uD835\uDC0D\uD835\uDC0C\uD835\uDC04\uD835\uDC0D\uD835\uDC13";
             case 6:
-                return "TECHNOLOGY";
+                return "\uD835\uDC13\uD835\uDC04\uD835\uDC02\uD835\uDC07\uD835\uDC0D\uD835\uDC0E\uD835\uDC0B\uD835\uDC0E\uD835\uDC06\uD835\uDC18";
             case 7:
-                return "SPORTS";
+                return "\uD835\uDC12\uD835\uDC0F\uD835\uDC0E\uD835\uDC11\uD835\uDC13\uD835\uDC12";
             default:
                 return null;
         }
