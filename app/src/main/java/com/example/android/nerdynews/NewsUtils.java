@@ -8,7 +8,7 @@ public class NewsUtils {
 
     public static NewsApiInterface getApiInterface(){
         if(retrofit==null){
-            retrofit=new Retrofit.Builder().baseUrl(NewsApiInterface.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
+            retrofit=new Retrofit.Builder().baseUrl(NewsApiInterface.G_BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         }
         return retrofit.create(NewsApiInterface.class);
     }

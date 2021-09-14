@@ -23,10 +23,9 @@ import retrofit2.Response;
 
 public class CovidFragment extends Fragment {
 
-    String NEWS_API_URL="https://newsapi.org/v2/top-headlines?country=in&q=covid&apiKey=cdbba53bb0d34fa2a43789edbdf5feba";
-    final String apikey="cdbba53bb0d34fa2a43789edbdf5feba";
+    final String apikey="6575847b-7392-4838-bbce-b9a441a00c01";
     private NewsAdapter mAdapter;
-    private ArrayList<Articles> arrayList;
+    private ArrayList<Result> arrayList;
     private RecyclerView list;
 
     @Nullable
@@ -47,20 +46,20 @@ public class CovidFragment extends Fragment {
     }
 
     private void findNews() {
-        NewsUtils.getApiInterface().getSearchNews("in","covid",apikey).enqueue(new Callback<NewsModal>() {
+        NewsUtils.getApiInterface().getSearchedNews("covid","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
+            public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {
 
                 if(response.isSuccessful()){
                     assert response.body() != null;
-                    arrayList.addAll(response.body().getArticles());
+                    arrayList.addAll(response.body().getResponse().getResults());
                     mAdapter.notifyDataSetChanged();
                 }
             }
 
             @Override
-            public void onFailure(Call<NewsModal> call, Throwable t) {
+            public void onFailure(Call<ApiModal> call, Throwable t) {
 
             }
         });

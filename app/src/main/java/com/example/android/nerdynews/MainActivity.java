@@ -11,7 +11,8 @@ import com.google.android.material.tabs.TabLayout;
 public class MainActivity extends AppCompatActivity {
 
 
-    private final static String NEWS_API_URL="https://newsapi.org/v2/top-headlines?country=in&category=politics&apiKey=cdbba53bb0d34fa2a43789edbdf5feba";
+    String GUARDIAN_API="https://content.guardianapis.com/search?q=covid&show-fields=thumbnail&page-size=100&api-key=6575847b-7392-4838-bbce-b9a441a00c01";
+    private String NEWS_API_URL="https://newsapi.org/v2/top-headlines?country=in&category=politics&apiKey=cdbba53bb0d34fa2a43789edbdf5feba";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

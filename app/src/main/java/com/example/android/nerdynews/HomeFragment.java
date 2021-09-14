@@ -25,11 +25,10 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
-    final String apikey="cdbba53bb0d34fa2a43789edbdf5feba";
+    final String apikey="6575847b-7392-4838-bbce-b9a441a00c01";
     private NewsAdapter mAdapter;
-    private ArrayList<Articles> arrayList;
+    private ArrayList<Result> arrayList;
     private RecyclerView list;
-    private ProgressBar loadingBar;
 
     @Nullable
     @Override
@@ -42,29 +41,28 @@ public class HomeFragment extends Fragment {
         mAdapter=new NewsAdapter(arrayList,getActivity());
         list.setAdapter(mAdapter);
 
+
         findNews();
-
-
-
 
         return rootView;
     }
 
     private void findNews() {
-        NewsUtils.getApiInterface().getNews("in",100,apikey).enqueue(new Callback<NewsModal>() {
+        NewsUtils.getApiInterface().getSearchedNews("india","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
+            public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {
+
                 if(response.isSuccessful()){
                     assert response.body() != null;
-                    arrayList.addAll(response.body().getArticles());
+                    arrayList.addAll(response.body().getResponse().getResults());
                     mAdapter.notifyDataSetChanged();
                 }
             }
 
             @Override
-            public void onFailure(Call<NewsModal> call, Throwable t) {
-                Toast.makeText(getContext(), "NO DATA FOUND :(", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<ApiModal> call, Throwable t) {
+
             }
         });
     }
