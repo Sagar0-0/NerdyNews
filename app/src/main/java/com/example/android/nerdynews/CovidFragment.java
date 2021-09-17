@@ -46,7 +46,7 @@ public class CovidFragment extends Fragment {
     }
 
     private void findNews() {
-        NewsUtils.getApiInterface().getSearchedNews("covid","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
+        NewsUtils.getApiInterface().getSearchedNews("corona","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {

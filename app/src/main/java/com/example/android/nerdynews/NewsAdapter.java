@@ -1,5 +1,6 @@
 package com.example.android.nerdynews;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,8 +18,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
-    private ArrayList<Result> results;
-    private Context context;
+    private final ArrayList<Result> results;
+    private final Context context;
 
     public NewsAdapter(ArrayList<Result> results, Context context) {
         this.results = results;
@@ -29,25 +30,23 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     @Override
     public NewsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View listItemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.news_item_rv,parent,false);
-        return new NewsAdapter.ViewHolder(listItemView);
+        return new ViewHolder(listItemView);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder holder, int position) {
         Result result=results.get(position);
         holder.title.setText(result.getWebTitle());
         holder.subTitle.setText("Dated: "+ result.getWebPublicationDate());
-        if(result.getFields().getThumbnail()==null){
-            holder.img.setImageResource(R.drawable.noimageavilable);
-        }else{
+
+        try{
             Picasso.get().load(result.getFields().getThumbnail()).into(holder.img);
-        }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(result.getWebUrl()));
-                context.startActivity(browserIntent);
-            }
+        }catch(Exception ignored){}
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(result.getWebUrl()));
+            context.startActivity(browserIntent);
         });
     }
 
@@ -56,9 +55,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return results.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView title,subTitle;
-        private ImageView img;
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        private final TextView title;
+        private final TextView subTitle;
+        private final ImageView img;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.title_heading);

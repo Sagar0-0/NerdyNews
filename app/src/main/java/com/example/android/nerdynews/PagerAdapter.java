@@ -8,14 +8,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.squareup.picasso.Picasso;
+
 public class PagerAdapter extends FragmentPagerAdapter {
 
 
-    private final Context mContext;
+    private int tabNumber;
 
-    public PagerAdapter(Context context, @NonNull FragmentManager fm) {
-        super(fm);
-        mContext=context;
+    public PagerAdapter(@NonNull FragmentManager fm,int behaviour,int tabs) {
+        super(fm,behaviour);
+        this.tabNumber=tabs;
     }
 
     @NonNull
@@ -45,7 +47,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 8;
+        return tabNumber;
     }
 
     @Nullable
@@ -71,5 +73,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
             default:
                 return null;
         }
+
     }
 }

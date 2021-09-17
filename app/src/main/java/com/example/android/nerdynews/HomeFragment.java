@@ -28,27 +28,27 @@ public class HomeFragment extends Fragment {
     final String apikey="6575847b-7392-4838-bbce-b9a441a00c01";
     private NewsAdapter mAdapter;
     private ArrayList<Result> arrayList;
-    private RecyclerView list;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView=inflater.inflate(R.layout.news_list,container,false);
 
-        list=rootView.findViewById(R.id.list);
+        RecyclerView list = rootView.findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(getActivity()));
         arrayList=new ArrayList<>();
         mAdapter=new NewsAdapter(arrayList,getActivity());
         list.setAdapter(mAdapter);
 
-
         findNews();
+
+
 
         return rootView;
     }
 
     private void findNews() {
-        NewsUtils.getApiInterface().getSearchedNews("india","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
+        NewsUtils.getApiInterface().getSearchedNews("latest","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {

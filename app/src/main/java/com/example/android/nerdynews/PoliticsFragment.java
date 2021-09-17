@@ -47,7 +47,7 @@ public class PoliticsFragment extends Fragment {
     }
 
     private void findNews() {
-        NewsUtils.getApiInterface().getSearchedNews("politics","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
+        NewsUtils.getApiInterface().getSearchedNews("taliban","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {

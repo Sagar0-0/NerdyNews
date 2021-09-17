@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item android:id="@+id/searchbutton"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:showAsAction="always"/>
+    <item android:id="@+id/about_us"
+        android:title="About Us"
+        android:icon="@drawable/ic_about"
+        app:showAsAction="never"/>
+    <item android:id="@+id/contact_us"
+        android:title="Contact Us"
+        android:icon="@drawable/ic_contact"
+        app:showAsAction="never"/>
+    <item android:id="@+id/rate_us"
+        android:title="Rate us"
+        android:icon="@drawable/ic_star"
+        app:showAsAction="never"/>
+    <item android:id="@+id/exit"
+        android:title="Exit"
+        android:icon="@drawable/ic_exit"
+        app:showAsAction="never"/>
+</menu>
