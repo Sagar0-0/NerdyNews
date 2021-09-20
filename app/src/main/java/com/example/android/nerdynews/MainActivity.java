@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             settingAdapter();
         }else{
             Toast.makeText(MainActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
-            noInternet.setImageResource(R.drawable.twitter);
+            noInternet.setImageResource(R.drawable.sagar);
             noInternet.setOnClickListener(v -> checkingNetwork());
         }
     }

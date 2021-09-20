@@ -61,14 +61,13 @@ public class SearchActivity extends AppCompatActivity {
         if (networkInfo == null) {
             Toast.makeText(this, "No Internet Connection", Toast.LENGTH_SHORT).show();
             arrayList.clear();
-            mAdapter.notifyDataSetChanged();
             emptyImage.setVisibility(View.VISIBLE);
             emptyImage.setImageResource(R.drawable.ic_internet_error);
         }
     }
 
     private void findNews(String toSearch) {
-        NewsUtils.getApiInterface().getSearchedNews(toSearch, "thumbnail", 49, "newest", apikey).enqueue(new Callback<ApiModal>() {
+        NewsUtils.getApiInterface().getSearchedNews(toSearch, "thumbnail", 49, "relevance", apikey).enqueue(new Callback<ApiModal>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {
