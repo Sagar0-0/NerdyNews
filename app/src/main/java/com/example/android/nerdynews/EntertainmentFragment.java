@@ -26,12 +26,14 @@ public class EntertainmentFragment extends Fragment {
     private NewsAdapter mAdapter;
     private ArrayList<Result> arrayList;
     private RecyclerView list;
+    private ProgressBar loading;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView=inflater.inflate(R.layout.news_list,container,false);
 
+        loading = rootView.findViewById(R.id.loading);
         list=rootView.findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(getActivity()));
         arrayList=new ArrayList<>();
@@ -54,6 +56,7 @@ public class EntertainmentFragment extends Fragment {
                     assert response.body() != null;
                     arrayList.addAll(response.body().getResponse().getResults());
                     mAdapter.notifyDataSetChanged();
+                    loading.setVisibility(View.GONE);
                 }
             }
 

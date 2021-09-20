@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.ArrayList;
 
@@ -28,27 +29,41 @@ public class HomeFragment extends Fragment {
     final String apikey="6575847b-7392-4838-bbce-b9a441a00c01";
     private NewsAdapter mAdapter;
     private ArrayList<Result> arrayList;
+    ProgressBar loading;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView=inflater.inflate(R.layout.news_list,container,false);
 
+
+        loading = rootView.findViewById(R.id.loading);
         RecyclerView list = rootView.findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(getActivity()));
         arrayList=new ArrayList<>();
         mAdapter=new NewsAdapter(arrayList,getActivity());
         list.setAdapter(mAdapter);
 
+
+
         findNews();
 
 
+//        SwipeRefreshLayout swipe=rootView.findViewById(R.id.swipe_referesh_layout);
+//        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                mAdapter=new NewsAdapter(arrayList,getActivity());
+//                list.setAdapter(mAdapter);
+//            }
+//        });
 
         return rootView;
     }
 
     private void findNews() {
         NewsUtils.getApiInterface().getSearchedNews("latest","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
+
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {
@@ -57,6 +72,7 @@ public class HomeFragment extends Fragment {
                     assert response.body() != null;
                     arrayList.addAll(response.body().getResponse().getResults());
                     mAdapter.notifyDataSetChanged();
+                    loading.setVisibility(View.GONE);
                 }
             }
 

@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.nerdynews">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/newslogo"
@@ -11,6 +12,7 @@
         android:roundIcon="@drawable/newslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.NerdyNews">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -20,6 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".AboutUs"
+            android:label="About Us"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/aboutUs" />
+
+        <activity android:name=".SearchActivity"
+            android:label="Search"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/search"/>
+
     </application>
 
 </manifest>

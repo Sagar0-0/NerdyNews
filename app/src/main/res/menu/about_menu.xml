@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+        <item android:id="@+id/gmail"
+            android:icon="@drawable/gmail"
+            android:title="G-MAIL"/>
+        <item android:id="@+id/github"
+            android:icon="@drawable/github"
+            android:title="GITHUB"/>
+        <item android:id="@+id/twitter"
+            android:icon="@drawable/twitter"
+            android:title="TWITTER"/>
+        <item android:id="@+id/linkedin"
+            android:icon="@drawable/linkedin"
+            android:title="LINKEDIN"/>
+        <item android:id="@+id/instagram"
+            android:icon="@drawable/instagram"
+            android:title="INSTAGRAM"/>
+        <item android:id="@+id/exit"
+            android:icon="@drawable/ic_exit"
+            android:title="Exit"/>
+
+
+    </group>
+</menu>

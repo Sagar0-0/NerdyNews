@@ -3,24 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+
     <item android:id="@+id/searchbutton"
         android:icon="@drawable/ic_search"
         android:title="Search"
         app:showAsAction="always"/>
-    <item android:id="@+id/about_us"
-        android:title="About Us"
-        android:icon="@drawable/ic_about"
-        app:showAsAction="never"/>
-    <item android:id="@+id/contact_us"
-        android:title="Contact Us"
-        android:icon="@drawable/ic_contact"
-        app:showAsAction="never"/>
-    <item android:id="@+id/rate_us"
-        android:title="Rate us"
-        android:icon="@drawable/ic_star"
-        app:showAsAction="never"/>
-    <item android:id="@+id/exit"
-        android:title="Exit"
-        android:icon="@drawable/ic_exit"
-        app:showAsAction="never"/>
+    <item android:title="More options"
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        app:showAsAction="always">
+        <menu>
+            <item android:id="@+id/about_us"
+                android:title="About Us"
+                android:icon="@drawable/ic_about"
+                app:showAsAction="never"/>
+            <item android:id="@+id/report_bug"
+                android:title="Report a Bug"
+                android:icon="@drawable/ic_baseline_bug_report_24"
+                app:showAsAction="never"/>
+            <item android:id="@+id/contact_us"
+                android:title="Contact Us"
+                android:icon="@drawable/ic_contact"
+                app:showAsAction="never"/>
+            <item android:id="@+id/share_support"
+                android:title="Share and Support"
+                android:icon="@drawable/ic_baseline_share_24"
+                app:showAsAction="never"/>
+            <item android:id="@+id/exit"
+                android:title="Exit"
+                android:icon="@drawable/ic_exit"
+                app:showAsAction="never"/>
+        </menu>
+    </item>
+
 </menu>

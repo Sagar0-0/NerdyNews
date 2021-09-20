@@ -4,6 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -12,6 +13,7 @@
         android:id="@+id/toolbar"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
         android:elevation="4dp">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -103,10 +105,10 @@
         android:background="@color/black" />
 
 
-    <!--    <ProgressBar-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_centerInParent="true"-->
-    <!--        android:id="@+id/loading_bar"/>-->
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/no_internet"/>
 
 </RelativeLayout>
