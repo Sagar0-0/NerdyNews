@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //      checking(highlighting) home in drawer as default check
         nav_view.setCheckedItem(R.id.home);
 
-        settingAdapter();
+
 //      checking internet connection and setting image resource
         checkingNetwork();
 

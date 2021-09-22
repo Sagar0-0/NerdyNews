@@ -26,7 +26,7 @@
                 android:layout_centerInParent="true"
                 android:text="🄽🄴🅁🄳🅈 ＮＥＷＳ"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -50,49 +50,49 @@
             android:id="@+id/home_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home" />
+            android:text="𝐇𝐎𝐌𝐄" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/covid_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Covid" />
+            android:text="𝐂𝐎𝐕𝐈𝐃" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/politics_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Politics" />
+            android:text="𝐏𝐎𝐋𝐈𝐓𝐈𝐂𝐒" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/health_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Health" />
+            android:text="𝐇𝐄𝐀𝐋𝐓𝐇" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/science_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Science" />
+            android:text="𝐒𝐂𝐈𝐄𝐍𝐂𝐄" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/entertainment_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Entertainment" />
+            android:text="𝐄𝐍𝐓𝐄𝐑𝐓𝐀𝐈𝐍𝐌𝐄𝐍𝐓" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/technology_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Technology" />
+            android:text="𝐓𝐄𝐂𝐇𝐍𝐎𝐋𝐎𝐆𝐘" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/sports_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sports" />
+            android:text="𝐒𝐏𝐎𝐑𝐓𝐒" />
 
     </com.google.android.material.tabs.TabLayout>
 

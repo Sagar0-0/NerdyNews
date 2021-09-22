@@ -8,7 +8,7 @@
     <item android:id="@+id/searchbutton"
         android:icon="@drawable/ic_search"
         android:title="Search"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item android:title="More options"
         android:icon="@drawable/ic_baseline_more_vert_24"
         app:showAsAction="always">
