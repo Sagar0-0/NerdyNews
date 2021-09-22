@@ -26,7 +26,12 @@ public class AboutUs extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.gmail:
-
+                        Intent mailIntent=new Intent(Intent.ACTION_SENDTO);
+                        mailIntent.setData(Uri.parse("mailto:"));
+                        mailIntent.putExtra(Intent.EXTRA_EMAIL,new String[]{"sagar.0dev@gmail.com"});
+                        if(mailIntent.resolveActivity(getPackageManager())!= null){
+                            startActivity(mailIntent);
+                        }
                         break;
                     case R.id.github:
                         String github="https://github.com/Sagar0-0";

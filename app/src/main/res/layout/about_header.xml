@@ -38,13 +38,13 @@
         android:text="ANDROID APPLICATION DEVELOPER"/>
 
     <TextView
+        android:id="@+id/cse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/dp"
-        android:layout_marginLeft="10dp"
         android:layout_below="@id/android_dev"
-        android:id="@+id/cse"
-        android:text="Cse Student 2nd Semester"/>
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/dp"
+        android:text="CSE Student 3rd Semester" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -6,25 +6,28 @@
 
 
     <Button
+        android:id="@+id/back_button"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/back_button"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/back"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/back" />
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/back_button"
-        android:background="@drawable/circlebox"
+        android:background="@drawable/searchbox"
         android:id="@+id/toolbar"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        android:elevation="4dp">
+        android:elevation="10dp">
 
 
         <RelativeLayout
@@ -32,21 +35,22 @@
             android:layout_height="match_parent">
 
             <EditText
+                android:id="@+id/edittext"
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:background="@android:color/transparent"
-                android:maxLines="1"
-                android:inputType="textCapWords"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_marginLeft="10dp"
-                android:hint="Type here to search.."
+                android:layout_marginTop="11dp"
                 android:layout_toLeftOf="@id/searchButton"
-                android:id="@+id/edittext"/>
+                android:background="@android:color/transparent"
+                android:hint="Type here to search.."
+                android:inputType="textCapWords"
+                android:maxLines="1" />
             <Button
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_marginTop="23dp"
-                android:layout_marginRight="23dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="10dp"
                 android:onClick="searchbutton"
                 android:background="@drawable/ic_search"
                 android:layout_alignParentEnd="true"
@@ -69,6 +73,12 @@
         android:layout_height="260dp"
         android:id="@+id/emptyImage"
         android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/nothingfound"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginTop="80dp" />
 
 
 </RelativeLayout>

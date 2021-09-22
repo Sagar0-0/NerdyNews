@@ -46,7 +46,7 @@ public class SportsFragment extends Fragment {
     }
 
     private void findNews() {
-        NewsUtils.getApiInterface().getSearchedNews("olympics","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
+        NewsUtils.getApiInterface().getSearchedNews("sports&ipl&olympics","thumbnail",49,"relevance",apikey).enqueue(new Callback<ApiModal>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {

@@ -3,21 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2128205128205128" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic__home.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_about.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_baseline_bug_report_24.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.1574074074074074" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_contact.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_exit.xml" value="0.1962962962962963" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_health.xml" value="0.2101851851851852" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_internet_error.xml" value="0.2128205128205128" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_search.xml" value="0.1574074074074074" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_star.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/ic_tech.xml" value="0.2101851851851852" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/instagram.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/drawable/twitter.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/about_header.xml" value="0.2" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/activity_about_us.xml" value="0.1" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/activity_search.xml" value="0.2" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/activity_search.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/activity_web_view.xml" value="0.2" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/content_main.xml" value="0.22" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/home_list_item.xml" value="0.1685185185185185" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/layout/nav_header.xml" value="0.22" />
@@ -28,6 +35,8 @@
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/menu/about_menu.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/menu/draw_menu.xml" value="0.22" />
         <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/menu/option_menu.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/sagar/AndroidStudioProjects/NerdyNews/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10989583333333333" />
       </map>
     </option>
   </component>

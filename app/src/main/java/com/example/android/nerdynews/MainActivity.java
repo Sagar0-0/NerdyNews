@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -77,6 +78,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        checkingNetwork();
+    }
+
     public void settingAdapter(){
 
 //      setting pager adapter with viewpager
@@ -98,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             settingAdapter();
         }else{
             Toast.makeText(MainActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
-            noInternet.setImageResource(R.drawable.sagar);
+            noInternet.setImageResource(R.drawable.tryagain);
             noInternet.setOnClickListener(v -> checkingNetwork());
         }
     }
@@ -221,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.share_support:
                 Intent intent2=new Intent(Intent.ACTION_SEND);
                 intent2.setType("text/plain");
-                String link="Download this News android application by SAGAR: https://play.google.com";
+                String link="Download this News android application by SAGAR: https://drive.google.com/file/d/1rmqErx7ZVoZl3MoQE_vQvB-lJQ9E49LF/view?usp=sharing";
                 intent2.putExtra(Intent.EXTRA_TEXT,link);
                 startActivity(Intent.createChooser(intent2,"ShareVia"));
                 break;
@@ -274,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.share_support:
                 Intent intent2=new Intent(Intent.ACTION_SEND);
                 intent2.setType("text/plain");
-                String link="Download this News android application by SAGAR: https://play.google.com";
+                String link="Download this News android application by SAGAR: https://drive.google.com/file/d/1rmqErx7ZVoZl3MoQE_vQvB-lJQ9E49LF/view?usp=sharing";
                 intent2.putExtra(Intent.EXTRA_TEXT,link);
                 startActivity(Intent.createChooser(intent2,"ShareVia"));
                 break;

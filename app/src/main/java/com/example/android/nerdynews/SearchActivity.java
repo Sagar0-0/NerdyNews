@@ -30,6 +30,7 @@ public class SearchActivity extends AppCompatActivity {
     private ArrayList<Result> arrayList;
     private ProgressBar loading;
     private ImageView emptyImage;
+    private ImageView nothingfound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,9 @@ public class SearchActivity extends AppCompatActivity {
         loading = findViewById(R.id.loading);
         loading.setVisibility(View.GONE);
         emptyImage=findViewById(R.id.emptyImage);
-        emptyImage.setImageResource(R.drawable.github);
+        emptyImage.setImageResource(R.drawable.searchnews);
+        nothingfound=findViewById(R.id.nothingfound);
+        nothingfound.setVisibility(View.GONE);
 
         RecyclerView list = findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(this));
@@ -52,6 +55,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+
             }
         });
 
@@ -78,8 +82,8 @@ public class SearchActivity extends AppCompatActivity {
                     mAdapter.notifyDataSetChanged();
                     loading.setVisibility(View.GONE);
                     if(arrayList.isEmpty()){
-                        emptyImage.setVisibility(View.VISIBLE);
-                        emptyImage.setImageResource(R.drawable.instagram);
+                        nothingfound.setVisibility(View.VISIBLE);
+                        nothingfound.setImageResource(R.drawable.nothingfound);
                         Toast.makeText(SearchActivity.this, "No matching result found for latest updates!", Toast.LENGTH_SHORT).show();
                     }
 
@@ -100,6 +104,7 @@ public class SearchActivity extends AppCompatActivity {
             NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
             //Check if there is an active network connection to the internet
             if (networkInfo != null && networkInfo.isConnected()) {
+                emptyImage.setImageResource(R.drawable.searchnews);
 
                 EditText editText = findViewById(R.id.edittext);
                 String searched = editText.getText().toString();
@@ -109,6 +114,7 @@ public class SearchActivity extends AppCompatActivity {
                 }else{
 
                     emptyImage.setVisibility(View.GONE);
+                    nothingfound.setVisibility(View.GONE);
                     loading.setVisibility(View.VISIBLE);
 
                     arrayList.clear();
@@ -128,6 +134,7 @@ public class SearchActivity extends AppCompatActivity {
                 arrayList.clear();
                 mAdapter.notifyDataSetChanged();
                 loading.setVisibility(View.GONE);
+                nothingfound.setVisibility(View.GONE);
                 emptyImage.setVisibility(View.VISIBLE);
                 emptyImage.setImageResource(R.drawable.ic_internet_error);
             }

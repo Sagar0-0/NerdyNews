@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,8 +46,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         }catch(Exception ignored){}
 
         holder.itemView.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(result.getWebUrl()));
-            context.startActivity(browserIntent);
+            Intent intent=new Intent(context, Webview.class);
+            intent.putExtra("url",results.get(position).getWebUrl());
+            context.startActivity(intent);
         });
     }
 

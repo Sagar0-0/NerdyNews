@@ -46,7 +46,7 @@ public class ScienceFragment extends Fragment {
     }
 
     private void findNews() {
-        NewsUtils.getApiInterface().getSearchedNews("mars","thumbnail",49,"newest",apikey).enqueue(new Callback<ApiModal>() {
+        NewsUtils.getApiInterface().getSearchedNews("mars&ocean&technology","thumbnail",49,"relevance",apikey).enqueue(new Callback<ApiModal>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<ApiModal> call, Response<ApiModal> response) {

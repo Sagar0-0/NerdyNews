@@ -22,18 +22,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".AboutUs"
             android:label="About Us"
             android:parentActivityName=".MainActivity"
             android:theme="@style/aboutUs" />
-
-        <activity android:name=".SearchActivity"
+        <activity
+            android:name=".SearchActivity"
             android:label="Search"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/search"/>
-
+            android:theme="@style/search" />
+        <activity android:name=".Webview"
+            android:label="More Details.."
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/aboutUs"/>
     </application>
 
 </manifest>
