@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,6 +51,15 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             intent.putExtra("url",results.get(position).getWebUrl());
             context.startActivity(intent);
         });
+
+        holder.shareNews.setOnClickListener(v -> {
+            Intent intent=new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            String link=result.getWebUrl();
+            String s="You should give it a check: "+link;
+            intent.putExtra(Intent.EXTRA_TEXT,s);
+            context.startActivity(Intent.createChooser(intent,"ShareVia"));
+        });
     }
 
     @Override
@@ -61,8 +71,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         private final TextView title;
         private final TextView subTitle;
         private final ImageView img;
+        private final Button shareNews;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            shareNews=itemView.findViewById(R.id.share_news);
             title=itemView.findViewById(R.id.title_heading);
             subTitle=itemView.findViewById(R.id.subHeading_text);
             img=itemView.findViewById(R.id.image_item);

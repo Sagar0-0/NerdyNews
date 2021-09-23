@@ -13,27 +13,30 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/image_item"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/image_item"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
 
         <TextView
+            android:id="@+id/title_heading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/title_heading"
             android:layout_below="@id/image_item"
-            android:textColor="#E2FFFFFF"
-            android:text="Main Heading of any news that is abcded and defabc is displayed here in this textview"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:padding="3dp"
-            android:layout_margin="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:ellipsize="end"
             android:maxLines="2"
-            android:ellipsize="end"/>
+            android:padding="3dp"
+            android:text="Main Heading of any news that is abcded and defabc is displayed here in this textview"
+            android:textColor="#E2FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sub heading"
             android:layout_below="@id/title_heading"
@@ -43,6 +46,16 @@
             android:layout_margin="3dp"
             android:padding="3dp"
             android:id="@+id/subHeading_text"/>
+
+        <Button
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:id="@+id/share_news"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/title_heading"
+            android:background="@drawable/ic_baseline_share_24"/>
 
     </RelativeLayout>
 
