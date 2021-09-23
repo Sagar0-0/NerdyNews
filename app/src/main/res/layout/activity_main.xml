@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:theme="@style/aboutUs"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/draw_menu"
         android:id="@+id/nav_view"/>
