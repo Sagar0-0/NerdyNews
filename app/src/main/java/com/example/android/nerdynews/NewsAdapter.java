@@ -48,7 +48,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent=new Intent(context, Webview.class);
-            intent.putExtra("url",results.get(position).getWebUrl());
+            intent.putExtra("url",result.getWebUrl());
             context.startActivity(intent);
         });
 

@@ -72,9 +72,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_view.setCheckedItem(R.id.home);
 
 
+
 //      checking internet connection and setting image resource
         checkingNetwork();
-
+        settingAdapter();
 
     }
 
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Check if there is an active network connection to the internet
         if (networkInfo != null && networkInfo.isConnected()) {
             noInternet.setVisibility(View.GONE);
-            settingAdapter();
+
         }else{
             Toast.makeText(MainActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
             noInternet.setImageResource(R.drawable.tryagain);
@@ -173,6 +174,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getMenuInflater().inflate(R.menu.option_menu,menu);
         return true;
     }
+
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -257,6 +261,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerlayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
