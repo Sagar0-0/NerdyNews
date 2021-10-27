@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle=new ActionBarDrawerToggle(this,drawerlayout,toolbar,
                 R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerlayout.addDrawerListener(toggle);
-        toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
 
 //      drawer items actions
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         pagerAdapter=new PagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-//      to get selected tab's respective fragment(not neccasary to create method)
+//      to get selected tab's respective fragment(not necessary to create method)
         gettingWithTabs();
     }
 
